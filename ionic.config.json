@@ -1,0 +1,7 @@
+{
+  "name": "hiwaiter-app",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
