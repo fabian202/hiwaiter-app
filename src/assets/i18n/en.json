@@ -1,0 +1,21 @@
+{
+  "HOME": "Home",
+  "MENU": "Menu",
+  "BACK": "",
+  "LOADING": "Please wait..",
+  "SCAN_QR_TITLE": "Scan qr code",
+  "SCAN_QR_DESCRIPTION": "Scan the qr code in the table",
+  "RESTAURANTS_TITLE": "Restaurants",
+  "RESTAURANTS_DESCRIPTION": "View closest restaurants",
+  "LOGIN_BUTTON": "Login",
+  "CALL": "Call",
+  "CALL_WAITER": "Call waiter",
+  "CALL_COMMENT": "Comment",
+  "CART": "Cart",
+  "CHECK": "Check",
+  "LOGIN_TITLE":"Login",
+  "LOGIN_EMAIL":"Email",
+  "LOGIN_PASSWORD": "Password",
+  "LOGIN_ENTER": "Login",
+  "LOGIN_ENTER_FACEBOOK": "Use Facebook"
+}

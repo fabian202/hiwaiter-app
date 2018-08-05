@@ -1,0 +1,21 @@
+{
+  "HOME": "Inicio",
+  "MENU": "Menú",
+  "BACK": "",
+  "LOADING": "Espere un momento..",
+  "SCAN_QR_TITLE": "Escanear código qr",
+  "SCAN_QR_DESCRIPTION": "Escanea el código qr en la mesa",
+  "RESTAURANTS_TITLE": "Restaurantes",
+  "RESTAURANTS_DESCRIPTION": "Ver restaurantes cercanos",
+  "LOGIN_BUTTON": "Iniciar sesión",
+  "CALL": "Llamar",
+  "CALL_WAITER": "Llamar mesero",
+  "CALL_COMMENT": "Comentario",
+  "CART": "Carrito",
+  "CHECK": "Cuenta",
+  "LOGIN_TITLE":"Iniciar sesión",
+  "LOGIN_EMAIL":"Correo",
+  "LOGIN_PASSWORD": "Contraseña",
+  "LOGIN_ENTER": "Entrar",
+  "LOGIN_ENTER_FACEBOOK": "Entrar con Facebook"
+}
