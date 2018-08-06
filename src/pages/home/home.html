@@ -1,18 +1,153 @@
 <ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Home</ion-title>
+  <ion-navbar color="bar">
+    <ion-title *ngIf="scanned">{{ 'MENU' | translate }}</ion-title>
+    <ion-title *ngIf="!scanned">{{ 'HOME' | translate }}</ion-title>
+    <ion-buttons end>
+      <button ion-button menuToggle>
+        <ion-icon name="md-more"></ion-icon>
+      </button>
+    </ion-buttons>
+
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h3>Ionic Menu Starter</h3>
-  {{ 'LOGIN_ENTER' | translate }}
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
+<ion-content>
+  <div *ngIf="scanned">
+    <ion-list>
+      <!-- <sticky sticky-zIndex="999" sticky-width="100%" sticky-offset-top="50"> -->
+      <ion-item-divider sticky>
+          Carne
+        </ion-item-divider>
+      <!-- </sticky> -->
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+      <ion-item>
+        <ion-thumbnail item-left>
+          <img src="https://media-cdn.tripadvisor.com/media/photo-s/05/d3/27/6c/restaurante-mana.jpg">
+        </ion-thumbnail>
+            <h2>Punta de anca</h2>
+            <p>20.000 $</p>
+          <button ion-button clear  color="danger" icon-left item-right>
+            <ion-icon name="md-cart"></ion-icon>
+            Agregar
+          </button>
+      </ion-item>
+      <ion-item>
+        <ion-thumbnail item-left>
+          <img src="http://folklorechicago.com/wp-content/uploads/2013/02/churrasco.jpg">
+        </ion-thumbnail>
+            <h2>Churrasco</h2>
+            <p>20.000 $</p>
+          <button ion-button clear  color="danger" icon-left item-right>
+            <ion-icon name="md-cart"></ion-icon>
+            Agregar
+          </button>
+      </ion-item>
+      <!-- <sticky sticky-parent="false" sticky-width="100%"  sticky-start="50"> -->
+        <ion-item-divider sticky sticky-class="stick-divider">
+
+            Pescados
+    </ion-item-divider>
+  <!-- </sticky> -->
+      <ion-item>
+        <ion-thumbnail item-left>
+          <img src="https://img-global.cpcdn.com/002_recipes/recipes_206971_v1432073099_receta_foto_00206971-kt5cojvytgwrxcmhdmlh/260x366cq50/photo.jpg">
+        </ion-thumbnail>
+            <h2>Salmon</h2>
+            <p>26.000 $</p>
+          <button ion-button clear  color="danger" icon-left item-right>
+            <ion-icon name="md-cart"></ion-icon>
+            Agregar
+          </button>
+      </ion-item>
+      <ion-item>
+        <ion-thumbnail item-left>
+          <img src="https://sandroslatinfood.com/wp-content/uploads/2017/01/PARGO-ROJO-FRITO-O-SUDADO.png">
+        </ion-thumbnail>
+            <h2>Pargo</h2>
+            <p>23.000 $</p>
+          <button ion-button clear  color="danger" icon-left item-right>
+            <ion-icon name="md-cart"></ion-icon>
+            Agregar
+          </button>
+      </ion-item>
+      <ion-item-divider sticky>
+          Típico
+        </ion-item-divider>
+      <ion-item>
+        <ion-thumbnail item-left>
+          <img src="https://igx.4sqi.net/img/general/200x200/4724930_nIqXeuNVWoTcK5W8jOs6iuPmHTmwMIJUeY3KTIEFEdg.jpg">
+        </ion-thumbnail>
+            <h2>Bandeja Paisa</h2>
+            <p>12.000 $</p>
+          <button ion-button clear  color="danger" icon-left item-right>
+            <ion-icon name="md-cart"></ion-icon>
+            Agregar
+          </button>
+      </ion-item>
+      <ion-item>
+        <ion-thumbnail item-left>
+          <img src="http://images-gmi-pmc.edge-generalmills.com/a32379ab-65fb-4242-9e07-28fbb087524e.jpg">
+        </ion-thumbnail>
+            <h2>Sancocho</h2>
+            <p>12.000 $</p>
+          <button ion-button clear  color="danger" icon-left item-right>
+            <ion-icon name="md-cart"></ion-icon>
+            Agregar
+          </button>
+      </ion-item>
+      <ion-item-divider sticky>
+        Bebidas
+      </ion-item-divider>
+      <ion-item>
+        <ion-thumbnail item-left>
+          <img src="https://mejorconsalud.com/wp-content/uploads/2014/02/Jugos-depurativos-500x339.jpg">
+        </ion-thumbnail>
+            <h2>Jugos Naturales</h2>
+            <p>3.000 $</p>
+          <button ion-button clear  color="danger" icon-left item-right>
+            <ion-icon name="md-cart"></ion-icon>
+            Agregar
+          </button>
+      </ion-item>
+      <ion-item>
+        <ion-thumbnail item-left>
+          <img src="https://elpoderdelalimento.files.wordpress.com/2014/12/bebidas-gaseosas-de-colores-620400.jpg?w=620&h=400">
+        </ion-thumbnail>
+            <h2>Gaseosa</h2>
+            <p>2.000 $</p>
+          <button ion-button clear  color="danger" icon-left item-right>
+            <ion-icon name="md-cart"></ion-icon>
+            Agregar
+          </button>
+      </ion-item>
+    </ion-list>
+
+  </div>
+
+  <div padding *ngIf="!scanned">
+    <ion-list>
+      <ion-item (tap)="scanCode()">
+        <ion-thumbnail item-left>
+          <img src="assets/imgs/qr.png">
+        </ion-thumbnail>
+        <h2>{{ 'SCAN_QR_TITLE' | translate }}</h2>
+        <p>{{ 'SCAN_QR_DESCRIPTION' | translate }}</p>
+        <button ion-button clear item-right>
+          <ion-icon name="arrow-forward"></ion-icon>
+        </button>
+      </ion-item>
+      <ion-item (tap)="viewRestaurants()">
+        <ion-thumbnail item-left>
+          <img src="assets/imgs/location.png">
+        </ion-thumbnail>
+        <h2>{{ 'RESTAURANTS_TITLE' | translate }}</h2>
+        <p>{{ 'RESTAURANTS_DESCRIPTION' | translate }}</p>
+        <button ion-button clear item-right >
+          <ion-icon name="arrow-forward"></ion-icon>
+        </button>
+      </ion-item>
+    </ion-list>
+    <!-- <button *ngIf="!settings.loggedIn" ion-button block (click)="login()">Login</button> -->
+
+  </div>
 </ion-content>

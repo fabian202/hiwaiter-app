@@ -1,19 +1,20 @@
-<ion-menu [content]="content">
-  <ion-header>
-    <ion-toolbar>
+<ion-menu type="overlay" side="right" [content]="content" color="bar">
+  <!-- <ion-header >
+    <ion-toolbar color="bar">
       <ion-title>Menu</ion-title>
     </ion-toolbar>
-  </ion-header>
+  </ion-header> -->
 
-  <ion-content>
-    <ion-list>
-      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+  <ion-content padding class="menu-content">
+      <img padding class="center-image" src="http://vignette3.wikia.nocookie.net/dragonball/images/b/b2/4_Star_Dragon_Ball_Edit.png/revision/latest?cb=20090527031247" width="100" height="100" />
+    <ion-list no-lines color="bar">
+      <button ion-item menuClose  *ngFor="let p of pages" (tap)="openPage(p)">
+        <ion-icon item-left [name]="p.icon"></ion-icon>
         {{p.title}}
       </button>
     </ion-list>
   </ion-content>
 
 </ion-menu>
-
 <!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
 <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

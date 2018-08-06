@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage } from 'ionic-angular';
 import { NavController } from 'ionic-angular';
+import { Storage } from '@ionic/storage';
 
 @IonicPage()
 @Component({
@@ -9,8 +10,13 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
+  scanned: boolean = false;
 
+  constructor(public navCtrl: NavController, public storage: Storage) {
+    storage.get('scanned').then((val) => {
+      console.log(val);
+      this.scanned = val;
+    });
   }
 
 }

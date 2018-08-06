@@ -1,3 +1,22 @@
 page-index {
 
-}
+    .scroll-content {
+      background-color: color($colors, bar) !important;
+    }
+  
+    .logo {
+      font-family: 'Lobster', sans-serif;
+      color: color($colors, primary);
+      text-align: center;
+      margin: 30px;
+      
+      .icon {
+        font-size: 7em;
+      }
+  
+      .text {
+        font-size: 3em;
+      }
+    }
+  }
+  

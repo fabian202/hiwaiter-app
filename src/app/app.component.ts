@@ -10,9 +10,9 @@ import { TranslateService } from '@ngx-translate/core';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = 'HomePage';
+  rootPage: any = 'IndexPage';
 
-  pages: Array<{title: string, component: any}>;
+  pages: Array<{title: string, component: any, icon: string}>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, translate: TranslateService,) {
     translate.setDefaultLang('en');
@@ -22,8 +22,10 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Home', component: 'HomePage' },
-      { title: 'List', component: 'list' }
+      { title: 'Home', component: 'TabsPage', icon: 'md-home' },
+      { title: 'Manage restaurants', component: 'RestaurantPage', icon: 'md-restaurant' },
+      { title: 'Employees', component: 'EmployeesPage', icon: 'md-people' },
+      { title: 'Logout', component: 'EmployeesPage', icon: 'md-exit'}
     ];
 
   }
